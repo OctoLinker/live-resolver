@@ -1,7 +1,7 @@
-const nodeUrl = require('url');
-const githubUrl = require('github-url-to-object');
+import nodeUrl from 'url';
+import githubUrl from 'github-url-to-object';
 
-module.exports = function (url) {
+export default function (url) {
   if (typeof url !== 'string') {
     return null;
   }
@@ -30,4 +30,4 @@ module.exports = function (url) {
 
   const githubInfo = githubUrl(url);
   return githubInfo ? githubInfo.https_url : url;
-};
+}

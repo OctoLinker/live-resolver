@@ -1,9 +1,9 @@
-const got = require('got');
-const cache = require('./utils/cache');
+import got from 'got';
+import cache from './utils/cache';
 
 const ERR_PING_NOT_FOUND = 'ERR_PING_NOT_FOUND';
 
-module.exports = async function (url) {
+export default async function (url) {
   const cacheKey = `ping_${url}`;
 
   const cacheValue = await cache.get(cacheKey);
@@ -28,4 +28,4 @@ module.exports = async function (url) {
 
       return undefined;
     });
-};
+}

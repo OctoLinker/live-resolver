@@ -1,5 +1,5 @@
-const Redis = require('ioredis');
-const log = require('./log');
+import Redis from 'ioredis';
+import log from './log';
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~ Thanks to RedisGreen and ZEIT for sponsoring ~~
@@ -136,7 +136,7 @@ async function get(key) {
   }
 }
 
-module.exports = {
+export default {
   auth,
   set,
   get,

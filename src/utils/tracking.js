@@ -1,9 +1,9 @@
-const Mixpanel = require('mixpanel');
-const log = require('./log');
+import Mixpanel from 'mixpanel';
+import log from './log';
 
 let instance;
 
-module.exports = {
+export default {
   init: () => {
     if (!process.env.MIXPANEL_TOKEN) {
       return;

@@ -1,4 +1,4 @@
-const findRepositoryUrl = require('./repository-url');
+import findRepositoryUrl from './repository-url';
 
 describe('repository url', () => {
   const urls = [

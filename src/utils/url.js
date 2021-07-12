@@ -10,6 +10,7 @@ function prioritiesHost(host, urls = []) {
   }, []);
 }
 
-module.exports = {
+export {
+  // eslint-disable-next-line import/prefer-default-export
   prioritiesHost,
 };

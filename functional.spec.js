@@ -1,7 +1,6 @@
-const http = require('http');
-const got = require('got');
-
-const handler = require('./src/handler');
+import http from 'http';
+import got from 'got';
+import handler from './src/handler';
 
 describe('functional', () => {
   let server;

@@ -1,10 +1,10 @@
-const findReachableUrls = require('find-reachable-urls');
-const flatMappingList = require('./mapping.json');
-const cache = require('../utils/cache');
+import findReachableUrls from 'find-reachable-urls';
+import flatMappingList from './mapping.json';
+import cache from '../utils/cache';
 
 const SUPPORTED_JAVA_VERSIONS = [9, 8, 7];
 
-module.exports = async function (pkg) {
+export default async function (pkg) {
   const targetAsPath = pkg.replace(/\./g, '/');
   const isBuildIn = !!pkg.match(/^javax?/);
 
@@ -43,4 +43,4 @@ module.exports = async function (pkg) {
   await cache.set(cacheKey, reachableUrl);
 
   return reachableUrl;
-};
+}

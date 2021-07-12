@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const got = require('got');
-const jsdom = require('jsdom'); // eslint-disable-line import/no-extraneous-dependencies
+import fs from 'fs';
+
+import path from 'path';
+import got from 'got';
+import jsdom from 'jsdom'; // eslint-disable-line import/no-extraneous-dependencies
 
 const { JSDOM } = jsdom;
 

@@ -1,4 +1,4 @@
-const { prioritiesHost } = require('./url');
+import { prioritiesHost } from './url';
 
 const inputUrls = [
   'https://foo.com',

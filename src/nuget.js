@@ -1,11 +1,10 @@
-const findReachableUrls = require('find-reachable-urls');
-const got = require('got');
-const isUrl = require('is-url');
-const { xml2js } = require('xml-js');
-
-const cache = require('./utils/cache');
-const log = require('./utils/log');
-const repositoryUrl = require('./registries/repository-url');
+import findReachableUrls from 'find-reachable-urls';
+import got from 'got';
+import isUrl from 'is-url';
+import { xml2js } from 'xml-js';
+import cache from './utils/cache';
+import log from './utils/log';
+import repositoryUrl from './registries/repository-url';
 
 const getLatestVersion = async (pkg) => {
   let response;
@@ -80,7 +79,7 @@ const getProjectUrls = async (pkg, version) => {
   return urls;
 };
 
-module.exports = async (pkg) => {
+export default async (pkg) => {
   pkg = pkg.toLowerCase();
 
   const cacheKey = `nuget_${pkg}`;

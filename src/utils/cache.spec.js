@@ -1,6 +1,6 @@
-const redis = require('ioredis');
-const cache = require('./cache');
-require('./log');
+import redis from 'ioredis';
+import cache from './cache';
+import './log';
 
 jest.mock('./log');
 jest.mock('ioredis');

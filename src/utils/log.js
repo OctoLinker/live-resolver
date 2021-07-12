@@ -14,4 +14,4 @@ function log(...rest) {
 
 log.prefix = name;
 
-module.exports = log;
+export default log;

@@ -1,17 +1,15 @@
-const { parse } = require('url');
-const { json } = require('micro');
-const pMap = require('p-map');
-
-const go = require('./go');
-const java = require('./java');
-const nuget = require('./nuget');
-const ping = require('./ping');
-const registries = require('./registries');
-
-const log = require('./utils/log');
-const cache = require('./utils/cache');
-const tracking = require('./utils/tracking');
-const preparePayload = require('./utils/payload');
+import { parse } from 'url';
+import { json } from 'micro';
+import pMap from 'p-map';
+import go from './go';
+import java from './java';
+import nuget from './nuget';
+import ping from './ping';
+import registries from './registries';
+import log from './utils/log';
+import cache from './utils/cache';
+import tracking from './utils/tracking';
+import preparePayload from './utils/payload';
 
 const logPrefix = log.prefix;
 
@@ -50,7 +48,7 @@ function errorHandler(error, res) {
 
 tracking.init();
 
-module.exports = async (req, res) => {
+export default async (req, res) => {
   if (['POST', 'GET'].includes(req.method)) {
     const timingTotalStart = Date.now();
 

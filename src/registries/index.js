@@ -1,13 +1,13 @@
-const util = require('util');
-const got = require('got');
-const isUrl = require('is-url');
-const findReachableUrls = require('find-reachable-urls');
-const repositoryUrl = require('./repository-url');
-const xpathHelper = require('./xpath-helper');
-const registryConfig = require('./config.json');
-const cache = require('../utils/cache');
-const log = require('../utils/log');
-const { prioritiesHost } = require('../utils/url');
+import util from 'util';
+import got from 'got';
+import isUrl from 'is-url';
+import findReachableUrls from 'find-reachable-urls';
+import repositoryUrl from './repository-url';
+import xpathHelper from './xpath-helper';
+import registryConfig from './config.json';
+import cache from '../utils/cache';
+import log from '../utils/log';
+import { prioritiesHost } from '../utils/url';
 
 const ERR_PACKAGE_NOT_FOUND = 'ERR_PACKAGE_NOT_FOUND';
 
@@ -112,7 +112,7 @@ async function resolve(type, packageName) {
   return reachableUrl;
 }
 
-module.exports = {
+export default {
   supported: Object.keys(registryConfig),
   resolve,
 };

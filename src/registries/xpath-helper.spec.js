@@ -1,5 +1,5 @@
-const jpath = require('json-path');
-const xpathHelper = require('./xpath-helper');
+import jpath from 'json-path';
+import xpathHelper from './xpath-helper';
 
 jest.mock('json-path');
 

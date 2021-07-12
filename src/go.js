@@ -1,10 +1,9 @@
-const findReachableUrls = require('find-reachable-urls');
-const readMeta = require('lets-get-meta');
-const got = require('got');
-const { tldExists } = require('tldjs');
-
-const cache = require('./utils/cache');
-const log = require('./utils/log');
+import findReachableUrls from 'find-reachable-urls';
+import readMeta from 'lets-get-meta';
+import got from 'got';
+import { tldExists } from 'tldjs';
+import cache from './utils/cache';
+import log from './utils/log';
 
 const getGoMeta = async (url) => {
   const response = await got.get(url);
@@ -62,7 +61,7 @@ const resolveUrl = async (url) => {
   return reachableUrl;
 };
 
-module.exports = async function (pkg) {
+export default async function (pkg) {
   try {
     return await resolveUrl(pkg);
   } catch (err) {
@@ -73,4 +72,4 @@ module.exports = async function (pkg) {
     }
     return undefined;
   }
-};
+}
